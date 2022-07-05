@@ -2,13 +2,25 @@ package com.epam.rd.autotasks.task01;
 
 import java.util.Arrays;
 
+
 public class Task01 {
 
 	public static void swapEven(int[] array) {
-		// TODO: Implement this method.
+		int i;
+		int value;
+		try {
+			for (i = 0; i < array.length / 2; i++) {
+				if (array[i] % 2 == 0 && array[array.length - 1 - i] % 2 == 0) {
+					value = array[i];
+					array[i] = array[array.length - 1 - i];
+					array[array.length - 1 - i] = value;
+				}
+			}
+		} catch (NullPointerException e) {
+			System.out.print("NullPointerException caught");
+		}
 	}
-
-	public static void main(String[] args) {
+	public static void main(String [] args){
 		{
 			int[] array = null;
 			swapEven(array);
